@@ -1,0 +1,23 @@
+@info:#2db7f5;
+@success:#19be6b;
+@warning:#ff9900;
+@error:#ed4014;
+
+@title:#1f3349;
+@font:#808695;
+@border:#dcdee2;
+@bgColor:#f4f7fb;
+
+.flex(
+  @justify: space-between,
+  @alignItem: center,
+  @direction: row,
+  @alignContent: flex-start
+){
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: @justify;
+  align-items: @alignItem;
+  flex-direction: @direction;
+  align-content:@alignContent;
+}
