@@ -104,7 +104,7 @@ export default {
   &-title {
     text-align: center;
     font-weight: bold;
-    font-size: 0.16rem;
+    font-size: 0.14rem;
     min-height: 0.3rem;
     line-height: 0.3rem;
   }
@@ -112,7 +112,7 @@ export default {
     &-message {
       // min-height: 50px;
       line-height: 0.3rem;
-      font-size: 0.14rem;
+      font-size: 0.12rem;
       text-align: center;
     }
     &-btn {

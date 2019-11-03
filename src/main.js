@@ -4,12 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import api from '@/common/api'
 import $Modal from '@/utils/Modal'
 import Modal from '@/components/Modal'
+import DrawBox from '@/components/DrawBox'
 import store from '@/store'
 Vue.component('Modal', Modal)
-Vue.use(api)
+Vue.component('DrawBox', DrawBox)
 Vue.use($Modal)
 
 Vue.config.productionTip = false

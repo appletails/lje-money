@@ -39,38 +39,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.tail_btn{
-  background-color: #fff;
-  color: #515a6e;
-  padding: 0.05rem 0.15rem;
-  font-size: 0.12rem;
-  border-radius: 4px;
-  text-align: center;
-  border: 1px solid transparent;
-  border-color: @border;
-  cursor: pointer;
-  &:focus{
-    outline:none;
-  }
-}
-.tail_btn_info{
-  color: #fff;
-  background-color: @info;
-  border-color: @info;
-}
-.tail_btn_success{
-  color: #fff;
-  background-color: @success;
-  border-color: @success;
-}
-.tail_btn_warning{
-  color: #fff;
-  background-color: @warning;
-  border-color: @warning;
-}
-.tail_btn_error{
-  color: #fff;
-  background-color: @error;
-  border-color: @error;
-}
 </style>

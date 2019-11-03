@@ -3,21 +3,152 @@
 @warning:#ff9900;
 @error:#ed4014;
 
-@title:#1f3349;
-@font:#808695;
-@border:#dcdee2;
-@bgColor:#f4f7fb;
+@title: #303133;
+@font: #515a6e;
+@date: #8e96a7;
+@border: #dcdee2;
+@bgColor: #f4f7fb;
 
+@color1: #2ba3f6;
+@color2: #f56f46;
+@color3: #f54646;
+li{
+  list-style: none;
+}
 .flex(
   @justify: space-between,
   @alignItem: center,
   @direction: row,
-  @alignContent: flex-start
+  @alignContent: flex-start,
+  @flexWrap: wrap
+
 ){
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap:@flexWrap;
   justify-content: @justify;
   align-items: @alignItem;
   flex-direction: @direction;
   align-content:@alignContent;
+}
+.border(
+  @borderColor:@border,
+  @borderStyle:solid,
+  @borderWidth:1px
+){
+  border-color: @borderColor;
+  border-style: @borderStyle;
+  border-width: @borderWidth;
+}
+
+.loading{
+  font-size: .32rem;
+  color: @color1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.day_item{
+  color: @color1;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  width: 3.6rem;
+  height: .8rem;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: .1rem;
+  margin: auto auto .1rem;
+}
+
+.tail_btn{
+  background-color: #fff;
+  color: #515a6e;
+  padding: 0.05rem 0.15rem;
+  font-size: 0.12rem;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid transparent;
+  border-color: @border;
+  cursor: pointer;
+  &:focus{
+    outline:none;
+  }
+}
+.tail_btn_info{
+  color: #fff;
+  background-color: @info;
+  border-color: @info;
+}
+.tail_btn_success{
+  color: #fff;
+  background-color: @success;
+  border-color: @success;
+}
+.tail_btn_warning{
+  color: #fff;
+  background-color: @warning;
+  border-color: @warning;
+}
+.tail_btn_error{
+  color: #fff;
+  background-color: @error;
+  border-color: @error;
+}
+
+// 弹窗show动画
+.window-enter-active {
+  animation: window .3s ease;
+}
+.window-leave-active {
+  animation: window .3s ease reverse;
+}
+@keyframes window {
+  0% {
+    opacity: 0;
+    transform: scale(0.5)
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+// 页面切换动画
+.fadeIn-enter-active {
+  animation: fadeIn .3s linear;
+}
+.fadeIn-leave-active {
+  animation: fadeOut .3s linear;
+}
+.fadeOut-enter-active {
+  animation: fadeOut .3s reverse linear;
+}
+.fadeOut-leave-active {
+  animation: fadeIn .3s reverse linear;
+}
+@keyframes fadeIn {
+  0% {
+    transform: translateX(100%);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+  }
+  100% {
+    transform: translateX(0);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    transform: translateX(0);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    transform: translateX(-100%);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
 }
