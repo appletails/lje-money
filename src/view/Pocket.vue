@@ -16,13 +16,17 @@
 				<p v-else>暂无敏感词</p>
 			</div>
 		</div>
-    <i v-if="loading" class="fa fa-spinner fa-spin loading"></i>
+	<IconLoading v-if="loading" class="loading"/>
 	</div>
 </template>
 <script>
 import { koudai } from '@/common/api'
 import { sleep } from '@/utils'
+import IconLoading from '@/components/Icon/IconLoading'
 export default {
+	components: {
+		IconLoading
+	},
 	data() {
 		return {
 			cont: '',
@@ -32,64 +36,64 @@ export default {
 		}
 	},
 	methods: {
-	copyTxt(value) {
-		if (!this.cont.length) {
+		copyTxt(value) {
+			if (!this.cont.length) {
+				this.$Modal.alert(
+					'你什么都没打复制个屁啊'
+				);
+				return
+			}
+			var _input = document.createElement("input");     // 直接构建input
+			_input.value = value;   // 设置内容
+			document.body.appendChild(_input);        // 添加临时实例
+			_input.select();      // 选择实例内容
+			document.execCommand("Copy");     // 执行复制
+			document.body.removeChild(_input);  // 删除临时实例
 			this.$Modal.alert(
-				'你什么都没打复制个屁啊'
+				'已复制到剪切板'
 			);
-			return
-		}
-		var _input = document.createElement("input");     // 直接构建input
-		_input.value = value;   // 设置内容
-		document.body.appendChild(_input);        // 添加临时实例
-		_input.select();      // 选择实例内容
-		document.execCommand("Copy");     // 执行复制
-		document.body.removeChild(_input);  // 删除临时实例
-		this.$Modal.alert(
-			'已复制到剪切板'
-		);
-	},
-	wordResult() {
-		this.$Modal.confirm(
-			"清空了自己重打的啊",
-			"你要清空？",
-			() => {
-					this.cont = ''
-					this.list = []
-				}
-			);
-	},
-	wordTest() {
-		if (!this.cont.length) {
-			this.$Modal.info(
-				'你什么都没打测个屁啊',
-			);
-			return
-		}
-		this.loading = true
-		koudai(this.cont)
-			.then(value => {
-				var result = value.data
-				if (!result.list.length) {
-					this.$Modal.info(
-						"竟然没有违禁词",
-						"牛逼啊"
-					);
-					return
-				}
-				this.list = result.list
-				this.box = this.cont
-				this.list.forEach(word => {
-					this.box = this.box.replace(new RegExp(word, 'g'), '<span style="color:#ed4014;">' + word + '</span>')
+		},
+		wordResult() {
+			this.$Modal.confirm(
+				"清空了自己重打的啊",
+				"你要清空？",
+				() => {
+						this.cont = ''
+						this.list = []
+					}
+				);
+		},
+		wordTest() {
+			if (!this.cont.length) {
+				this.$Modal.info(
+					'你什么都没打测个屁啊',
+				);
+				return
+			}
+			this.loading = true
+			koudai(this.cont)
+				.then(value => {
+					var result = value.data
+					if (!result.list.length) {
+						this.$Modal.info(
+							"竟然没有违禁词",
+							"牛逼啊"
+						);
+						return
+					}
+					this.list = result.list
+					this.box = this.cont
+					this.list.forEach(word => {
+						this.box = this.box.replace(new RegExp(word, 'g'), '<span style="color:#ed4014;">' + word + '</span>')
+					})
 				})
-			})
-			.catch(err => {
-				this.$Modal.alert(err);
-			})
-			.finally(()=>{
-				this.loading = false
-			})
-	}
+				.catch(err => {
+					this.$Modal.alert(err);
+				})
+				.finally(()=>{
+					this.loading = false
+				})
+		}
 	},
 	created() {
 	}

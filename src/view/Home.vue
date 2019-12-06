@@ -5,13 +5,14 @@
       title="每日一语"
       marginBottom=".1rem"
       path="/oneday"
-      icon="fa-th-large"
-    />
+    >
+      <IconIndex slot="Icon" style="margin-right:.08rem"/>
+    </Title>
     <div
       class="day_item"
       v-if="loading"
     >
-      <i class="fa fa-spinner fa-spin day_loading"></i>
+      <IconLoading class="day_loading"/>
     </div>
     <DayItem
       v-else
@@ -21,8 +22,9 @@
     />
     <Title
       title="快速入口"
-      icon="fa-book"
-    />
+    >
+      <IconBook slot="Icon" style="margin-right:.08rem"/>
+    </Title>
     <div class="more">
       <router-link
         tag="div"
@@ -42,10 +44,16 @@ import routerConfig from "@/router/router.config";
 import DayItem from '@/components/DayItem'
 import Title from '@/components/Title'
 import { sleep } from '@/utils'
+import IconIndex from '@/components/Icon/IconIndex'
+import IconBook from '@/components/Icon/IconBook'
+import IconLoading from '@/components/Icon/IconLoading'
 export default {
   components: {
     DayItem,
-    Title
+    Title,
+    IconIndex,
+    IconBook,
+    IconLoading
   },
   data () {
     return {

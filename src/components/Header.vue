@@ -1,7 +1,9 @@
 <template>
     <div class="header">
         <div class="left" v-if="routeName === 'Home'"></div>
-        <div class="left" v-else @click="$router.go(-1)"><i class="fa fa-angle-left"></i></div>
+        <div class="left" v-else @click="$router.go(-1)">
+            <IconBack />
+        </div>
         <div class="center">{{title}}</div>
         <div class="right">
             <img src="@/assets/img/logo.png" alt="logo">
@@ -9,8 +11,12 @@
     </div>
 </template>
 <script>
+import IconBack from '@/components/Icon/IconBack'
 export default {
     name: 'Header',
+    components: {
+        IconBack
+    },
     props: {
         title: {
             type: String,
@@ -45,12 +51,7 @@ export default {
     }
     .left{
         width: .3rem;
-        i{
-            display: block;
-            width: .3rem;
-            font-size: .3rem;
-            color: @font;
-        }
+        .flex;
     }
     .right{
         width: .3rem;

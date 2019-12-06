@@ -1,6 +1,6 @@
 <template>
     <div class="title" :style="{marginBottom: marginBottom}">
-        <i :class="['fa',icon,'icon']" v-if="icon"></i>
+        <slot name="Icon"></slot>
         <div class="cont">{{title}}</div>
         <router-link class="more" v-if="path" :to="path">More</router-link>
         <div v-else></div>
