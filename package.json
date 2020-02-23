@@ -5,7 +5,7 @@
   "author": "tail <xuyi19930401@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 192.168.1.5",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
@@ -15,9 +15,13 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "babel-polyfill": "^6.26.0",
+    "echarts": "^4.5.0",
+    "es6-promise": "^4.2.8",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "vue": "^2.5.2",
+    "vue-echarts": "^4.0.4",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.1"
   },

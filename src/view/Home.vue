@@ -34,6 +34,8 @@
         :to="item.path"
       >{{item.meta.title}}</router-link>
     </div>
+    <router-link tag="div" to="/pocket" class="link">友情链接：口袋敏感词检测</router-link>
+    <div class="icp">皖ICP备18010765号-2</div>
   </div>
 </template>
 
@@ -152,6 +154,18 @@ export default {
     .bg3 {
       background-position: center -2.22rem;
     }
+  }
+  .link {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    line-height: .3rem;
+    margin: 0 1rem;
+  }
+  .icp {
+    line-height: .4rem;
+    color: #929292;
+    font-size: .12rem;
+    text-align: center;
   }
 }
 .day_item {
