@@ -56,50 +56,6 @@ export default new Router({
       }
     },
     {
-      path: '/week',
-      name: 'Week',
-      component: () => import(/* webpackChunkName: "Week" */ '@/view/Week'),
-      meta: {
-        title: '每周总结',
-        index: 5,
-        head:false,
-        foot: false
-      }
-    },
-    {
-      path: '/allIdol',
-      name: 'allIdol',
-      component: () => import(/* webpackChunkName: "Year" */ '@/view/allIdols'),
-      meta: {
-        title: '全部可查成员',
-        index: 5,
-        head: false,
-        foot: false
-      }
-    },
-    {
-      path: '/year',
-      name: 'Year',
-      component: () => import(/* webpackChunkName: "Year" */ '@/components/Year'),
-      meta: {
-        title: '年总结',
-        index: 5,
-        head:false,
-        foot: false
-      }
-    },
-    {
-      path: '/full',
-      name: 'Full',
-      component: () => import(/* webpackChunkName: "Year" */ '@/components/Year/full'),
-      meta: {
-        title: '年总结重置版',
-        index: 5,
-        head:false,
-        foot: false
-      }
-    },
-    {
       path: '/404',
       name: '404',
       component: () => import(/* webpackChunkName: "404" */ '@/view/404'),
