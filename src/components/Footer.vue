@@ -1,8 +1,8 @@
 <template>
     <div class="footer">
-        <router-link to="/pocket">
+        <!-- <router-link to="/pocket"> -->
             口袋敏感词检测
-        </router-link>
+        <!-- </router-link> -->
     </div>
 </template>
 <script>

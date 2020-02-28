@@ -16,15 +16,6 @@ export function getFiveBirthday() {
 	return service.get('/api/lib/five/birthday.json')
 }
 
-export function getWeek() {
-	return service.get('/api/week/data.json')
-}
-export function getDataView() {
-	return service.get('/api/week/dataView.json')
-}
-export function getDataWeek() {
-	return service.get('/api/week/dataWeek.json')
-}
 // 鸡汤接口
 export function soups() {
 	let date1 = new Date();

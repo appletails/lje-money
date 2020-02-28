@@ -13,11 +13,9 @@
         let size = app.clientWidth / 3.75 + 'px'
         app.style.fontSize = size
       }
-      window.onload=function(){
+      appResize()
+      window.onresize=function(){
         appResize()
-        window.onresize=function(){
-          appResize()
-        }
       }
     </script>
   </head>

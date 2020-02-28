@@ -1,41 +1,35 @@
 <template>
   <div id="app" :style="{
-    paddingTop: head ? '0.45rem' : 0,
-    paddingBottom: foot ? '0.45rem' : 0
+    paddingTop: head ? '0.45rem' : 0
   }">
     <Header :title="title" :routeName="routeName" v-if="head" />
     <transition :name="fade">
       <router-view />
     </transition>
-    <Footer v-if="head" />
     <Modal />
     <DrawBox />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Header"
 export default {
   name: "App",
   components: {
-    Header,
-    Footer
+    Header
   },
   data(){
     return {
       fade: 'fadeIn',
       title: '',
       routeName: '',
-      head: true,
-      foot: true
+      head: false
     }
   },
   watch: {
     $route(to, from) {
       this.title = to.meta.title
       this.head = typeof to.meta.head === 'undefined' ? true : to.meta.head
-      this.foot = typeof to.meta.foot === 'undefined' ? true : to.meta.foot
       this.routeName = to.name
       this.fade = to.meta.index < from.meta.index ? "fadeOut" : "fadeIn"
     }
