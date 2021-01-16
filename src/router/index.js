@@ -38,6 +38,15 @@ export default new Router({
       }
     },
     {
+      path: '/helloweenCard',
+      name: 'helloweenCard',
+      component: () => import(/* webpackChunkName: "Helloween.showCard" */ '@/view/Helloween/showCard'),
+      meta: {
+        title: '万圣节抽卡详情',
+        index: 4
+      }
+    },
+    {
       path: '/pocket',
       name: 'Pocket',
       component: () => import(/* webpackChunkName: "Pocket" */ '@/view/Pocket'),

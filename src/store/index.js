@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import hellow from '@/view/Helloween/store'
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
@@ -9,6 +10,7 @@ export default new Vuex.Store({
       data: [],
       gift: [],
       moneyList: [],
+      seven: [],
       allMoney: 0
     },
     userCard: [],
@@ -37,16 +39,19 @@ export default new Vuex.Store({
     drawShow (state, show) {
       state.drawShow = show
     },
-    drawBox (state,{data,nick_name,allMoney,gift,moneyList}) {
+    drawBox (state,{data,nick_name,seven,allMoney,gift,moneyList}) {
       state.drawMain = {
         nick_name,
         data,
         gift,
+        seven,
         moneyList,
         allMoney
       }
     }
   },
   actions: {},
-  modules: {}
+  modules: {
+    hellow
+  }
 })
