@@ -78,7 +78,11 @@ export default {
             flex: 1;
             font-size: .12rem;
             background-color: #fff;
+            &>div{
+                width: 100%;
+            }
             .date{
+                width: auto;
                 align-self: flex-end;
                 color: @date;
             }

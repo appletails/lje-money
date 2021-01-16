@@ -1,5 +1,29 @@
 export default [
   {
+    path: '/helloween',
+    name: 'Helloween',
+    meta: {
+      title: '金曲扑克抽卡榜',
+      index: 3
+    }
+  },
+  {
+    path: '/seven',
+    name: 'Seven',
+    meta: {
+      title: '2020Owhat集资排名(截止到第七届总决选)',
+      index: 3
+    }
+  },
+  {
+    path: '/chuang',
+    name: 'Chuang',
+    meta: {
+      title: '2020摩点集资榜',
+      index: 3
+    }
+  },
+  {
     path: '/sixrank',
     name: 'SixRank',
     meta: {

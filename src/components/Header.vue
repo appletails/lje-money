@@ -37,7 +37,7 @@ export default {
     border-top: none;
     border-left: none;
     border-right: none;
-    padding: .1rem;
+    padding: 0 .1rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -45,6 +45,7 @@ export default {
     font-size: .12rem;
     z-index: 101;
     .flex;
+    align-content: center;
     .center{
         font-size: .14rem;
         color: @title;

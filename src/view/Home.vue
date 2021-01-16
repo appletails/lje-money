@@ -130,11 +130,11 @@ export default {
       width: 3.6rem;
       background-size: cover;
       background-repeat: no-repeat;
-      height: 0.74rem;
-      line-height: 0.74rem;
+      height: 0.375rem;
+      line-height: 0.375rem;
       color: #fff;
       border-radius: 0.04rem;
-      margin-top: 0.1rem;
+      margin-top: 4px;
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
       background-image: url(../assets/img/home_bg.jpg);
       padding-left: 0.3rem;
@@ -146,13 +146,22 @@ export default {
       background-position: center top;
     }
     .bg1 {
-      background-position: center -0.74rem;
+      background-position: center -0.375rem;
     }
     .bg2 {
-      background-position: center -1.48rem;
+      background-position: center -0.75rem;
     }
     .bg3 {
-      background-position: center -2.22rem;
+      background-position: center -1.125rem;
+    }
+    .bg4 {
+      background-position: center -1.5rem;
+    }
+    .bg5 {
+      background-position: center -1.875rem;
+    }
+    .bg6 {
+      background-position: center -2.25rem;
     }
   }
   .link {
