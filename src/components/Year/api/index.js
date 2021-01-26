@@ -2,7 +2,7 @@ import axios from 'axios'
 // 创建axios实例
 const $http = axios.create({
   baseURL: 'http://192.168.1.5:83',
-//   baseURL: 'http://www.crean.top:83',
+//   baseURL: 'http://81.68.171.190:83',
   timeout: 300000, // 请求超时时间 
 })
 $http.interceptors.response.use(function (response) {
